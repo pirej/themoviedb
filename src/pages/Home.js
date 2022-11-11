@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import MovieCard from '../components/MovieCard';
 import chevronright from '../images/chevron-right.svg';
-import chevrondown from '../images/chevron-down.svg';
+// import chevrondown from '../images/chevron-down.svg';
 
 const MyHome = styled.div`
   display: flex;
@@ -72,6 +72,23 @@ const MyHome = styled.div`
 `;
 
 const Home = () => {
+  const [Loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
+
+  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=1`;
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch(apiUrl);
+      const movies = await res.json();
+      setData(movies);
+    };
+    getData();
+    setLoading(false);
+  }, [apiUrl]);
+
+  !Loading && data && console.log('data is ', data);
+
   return (
     <MyHome>
       <div className="maincontent">
