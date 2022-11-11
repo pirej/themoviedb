@@ -15,10 +15,14 @@ const Card = styled.div`
   }
 `;
 
-const MovieCard = () => {
+const MovieCard = ({ item }) => {
+  console.log('item data is ', item);
+  const { original_title, release_date, vote_average } = item;
   return (
     <Card>
-      <h3>Movie demo</h3>
+      <h3>Procent => {vote_average}</h3>
+      <h3>{original_title}</h3>
+      <h3>{release_date}</h3>
     </Card>
   );
 };

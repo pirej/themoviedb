@@ -75,7 +75,7 @@ const Home = () => {
   const [Loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
 
-  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=1`;
+  const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=1`;
 
   useEffect(() => {
     const getData = async () => {
@@ -87,7 +87,7 @@ const Home = () => {
     setLoading(false);
   }, [apiUrl]);
 
-  data && console.log('data is ', data.results);
+  // data && console.log('data is ', data.results);
 
   return (
     <MyHome>
