@@ -29,7 +29,7 @@ const MyHome = styled.div`
             width: 16.125rem;
             .sideMainItem {
               width: 14.125rem;
-              border: solid 1px lightgrey;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
               border-radius: 10px;
               display: flex;
               justify-content: space-between;
@@ -58,6 +58,7 @@ const MyHome = styled.div`
         }
 
         .cardssection {
+          /* background-color: teal; */
           display: flex;
           .theCards {
             display: flex;
