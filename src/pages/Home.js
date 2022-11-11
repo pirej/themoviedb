@@ -87,7 +87,7 @@ const Home = () => {
     setLoading(false);
   }, [apiUrl]);
 
-  !Loading && data && console.log('data is ', data);
+  data && console.log('data is ', data.results);
 
   return (
     <MyHome>
@@ -115,26 +115,11 @@ const Home = () => {
             </div>
             <div className="cardssection">
               <div className="theCards">
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
+                {data
+                  ? data.results.map((item, idx) => {
+                      return <MovieCard item={item} key={idx} />;
+                    })
+                  : null}
               </div>
             </div>
           </div>
