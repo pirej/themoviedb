@@ -10,7 +10,6 @@ function App() {
   return (
     <MyAPP>
       <Navbar />
-      <h1>TheMovieDB home page</h1>
       <Home />
     </MyAPP>
   );
