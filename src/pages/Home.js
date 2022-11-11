@@ -83,25 +83,7 @@ const Home = () => {
             <div className="sidebarWrapper">
               <div className="allSidebarItems">
                 <div className="sideMainItem">
-                  <p>Sort</p>
-                  <img
-                    src={chevronright}
-                    width={16}
-                    height={16}
-                    alt="arrow icon"
-                  />
-                </div>
-                <div className="sideMainItem">
                   <p>Filters</p>
-                  <img
-                    src={chevronright}
-                    width={16}
-                    height={16}
-                    alt="arrow icon"
-                  />
-                </div>
-                <div className="sideMainItem">
-                  <p>Where to Watch</p>
                   <img
                     src={chevronright}
                     width={16}
