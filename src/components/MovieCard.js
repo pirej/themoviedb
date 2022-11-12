@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Card = styled.div`
   width: 11.53rem;
-  height: 22.5rem;
+  height: 22.8rem;
   /* margin-top: 1.875rem; */
   margin-top: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
@@ -40,8 +40,9 @@ const Card = styled.div`
       }
       p {
         color: #00000099;
-        margin-top: 0.1rem;
-        margin-bottom: 0.7rem;
+        margin-top: 0rem;
+        margin-bottom: 0.6rem;
+        font-size: 0.9rem;
       }
     }
   }
@@ -52,6 +53,12 @@ const MovieCard = ({ item }) => {
 
   const baseUrl = 'https://www.themoviedb.org/t/p/w220_and_h330_face';
   const backdropUrl = baseUrl + poster_path;
+
+  // format date same as the reference site
+  const tempdate = new Date(release_date);
+  const shortenDate = tempdate.toString().substring(4, 15);
+  const formatedDate =
+    shortenDate.substring(0, 6) + shortenDate.slice(6).replace(' ', ', ');
 
   return (
     <Card>
@@ -72,7 +79,7 @@ const MovieCard = ({ item }) => {
               {original_title}
             </Link>
           </Router>
-          <p>{release_date}</p>
+          <p>{formatedDate}</p>
         </div>
       </div>
     </Card>
