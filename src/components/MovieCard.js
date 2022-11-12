@@ -38,10 +38,6 @@ const Card = styled.div`
         position: absolute;
         bottom: -5px;
         left: 20px;
-        h3 {
-          color: green;
-          margin: 0;
-        }
       }
     }
 
