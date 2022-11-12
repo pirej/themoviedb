@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import MovieCard from '../components/MovieCard';
 import chevronright from '../images/chevron-right.svg';
+import useMovieData from '../state/Store';
 // import chevrondown from '../images/chevron-down.svg';
 
 const MyHome = styled.div`
@@ -60,21 +61,43 @@ const MyHome = styled.div`
 
 const Home = () => {
   const [Loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
+  const [clickedToLoad, setClickedToLoad] = useState(false);
 
-  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=1`;
+  const currentPage = useMovieData(state => state.page);
+  const loadMoreMovies = useMovieData(state => state.nextPage);
 
+  const firstPage = 1;
+  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=${firstPage}`;
+  const apiUrlNext = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=${currentPage}`;
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(apiUrl);
       const movies = await res.json();
-      setData(movies);
+      setData(movies.results);
     };
     getData();
     setLoading(false);
   }, [apiUrl]);
+  //----------------------------------------------
+  useEffect(() => {
+    console.log('currentPage se smenilo ', currentPage);
+    if (currentPage > firstPage) {
+      const getData = async () => {
+        const res = await fetch(apiUrlNext);
+        const movies = await res.json();
+        const newMoviesArr = movies.results;
+        setData(data.concat(newMoviesArr));
+      };
+      getData();
+    }
+  }, [currentPage]);
 
-  // data && console.log('data is ', data.results);
+  //----------------------------------------------
+  const LoadMoreData = () => {
+    setClickedToLoad(true);
+  };
+  //----------------------------------------------
 
   return (
     <MyHome>
@@ -103,15 +126,21 @@ const Home = () => {
             <div className="cardWrapper">
               <div className="cardssection">
                 <div className="theCards">
-                  {data
-                    ? data.results.map((item, idx) => {
-                        return <MovieCard item={item} key={idx} />;
-                      })
-                    : null}
+                  {data?.map((item, idx) => {
+                    return <MovieCard item={item} key={idx} />;
+                  })}
                 </div>
               </div>
               <div className="btnLoad btn">
-                <button>Load More</button>
+                <button
+                  // disabled={clickedToLoad}
+                  onClick={() => {
+                    loadMoreMovies();
+                    LoadMoreData();
+                  }}
+                >
+                  Load More
+                </button>
               </div>
             </div>
           </div>
