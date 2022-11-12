@@ -9,7 +9,7 @@ const Card = styled.div`
   height: 22.8rem;
   /* margin-top: 1.875rem; */
   margin-top: 0.75rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
   border-radius: 10px;
   .wrapper {
     display: flex;
@@ -36,7 +36,7 @@ const Card = styled.div`
       }
       .ratingSection {
         position: absolute;
-        bottom: -5px;
+        bottom: -3px;
         left: 20px;
       }
     }

@@ -29,7 +29,7 @@ const MyHome = styled.div`
             width: 16.125rem;
             .sideMainItem {
               width: 14.125rem;
-              box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+              box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
               border-radius: 10px;
               display: flex;
               justify-content: space-between;
