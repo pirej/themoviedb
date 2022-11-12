@@ -32,12 +32,9 @@ const ProgressBar = styled.div`
 
       circle {
         fill: none;
-        /* stroke: url(#GradientColor); */
-        /* stroke: red; */
         stroke-width: 4px;
-        /* stroke-dasharray: 434; /* full circle */
-        stroke-dasharray: 80;
-        stroke-offset: 200;
+        /* stroke-dasharray: 100; /* full circle */
+        stroke-dasharray: 103;
       }
     }
     .svgBack {
@@ -91,9 +88,10 @@ const Rating = ({ votes }) => {
                     : votes >= 6
                     ? '#ACAF1A'
                     : votes >= 5
-                    ? '#CA851E'
+                    ? '#CA741E'
                     : '#CE3939'
                 }
+                strokeDashoffset={105 - rating}
                 cx="20"
                 cy="20"
                 r="16"
