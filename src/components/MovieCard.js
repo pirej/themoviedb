@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
+import Rating from './Rating';
 
 const Card = styled.div`
   width: 11.53rem;
@@ -23,7 +24,7 @@ const Card = styled.div`
       .ratingSection {
         position: absolute;
         bottom: -5px;
-        left: 10px;
+        left: 20px;
         h3 {
           color: green;
           margin: 0;
@@ -69,7 +70,7 @@ const MovieCard = ({ item }) => {
               <img src={backdropUrl} alt="movie backdrop" />
             </Link>
             <div className="ratingSection">
-              <h3>Rating {vote_average}</h3>
+              <Rating votes={vote_average} />
             </div>
           </div>
         </Router>
