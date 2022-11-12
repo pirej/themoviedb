@@ -81,7 +81,7 @@ const Home = () => {
   }, [apiUrl]);
   //----------------------------------------------
   useEffect(() => {
-    console.log('currentPage se smenilo ', currentPage);
+    // console.log('currentPage se smenilo ', currentPage);
     if (currentPage > firstPage) {
       const getData = async () => {
         const res = await fetch(apiUrlNext);
@@ -91,12 +91,11 @@ const Home = () => {
       };
       getData();
     }
+    // eslint-disable-next-line
   }, [currentPage]);
 
   //----------------------------------------------
-  const LoadMoreData = () => {
-    setClickedToLoad(true);
-  };
+
   //----------------------------------------------
 
   return (
@@ -133,10 +132,11 @@ const Home = () => {
               </div>
               <div className="btnLoad btn">
                 <button
-                  // disabled={clickedToLoad}
+                  className={`${clickedToLoad ? 'disabled' : null} `}
+                  disabled={clickedToLoad}
                   onClick={() => {
                     loadMoreMovies();
-                    LoadMoreData();
+                    setClickedToLoad(true);
                   }}
                 >
                   Load More
