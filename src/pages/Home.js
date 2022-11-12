@@ -40,20 +40,6 @@ const MyHome = styled.div`
                 margin: 0;
               }
             }
-            .btn {
-              button {
-                background-color: #01b4e4;
-                cursor: pointer;
-                font-size: 1.2rem;
-                font-weight: 500;
-                color: white;
-                width: 100%;
-                height: 2.75rem;
-                border: none;
-                margin-top: 1rem;
-                border-radius: 20px;
-              }
-            }
           }
         }
 
@@ -114,13 +100,18 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="cardssection">
-              <div className="theCards">
-                {data
-                  ? data.results.map((item, idx) => {
-                      return <MovieCard item={item} key={idx} />;
-                    })
-                  : null}
+            <div className="cardWrapper">
+              <div className="cardssection">
+                <div className="theCards">
+                  {data
+                    ? data.results.map((item, idx) => {
+                        return <MovieCard item={item} key={idx} />;
+                      })
+                    : null}
+                </div>
+              </div>
+              <div className="btnLoad btn">
+                <button>Load More</button>
               </div>
             </div>
           </div>
