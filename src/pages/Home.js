@@ -79,7 +79,6 @@ const MyHome = styled.div`
 `;
 
 const Home = () => {
-  const [Loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [clickedToLoad, setClickedToLoad] = useState(false);
   const [filterClicked, setFilterClicked] = useState(false);
@@ -97,7 +96,6 @@ const Home = () => {
       setData(movies.results);
     };
     getData();
-    setLoading(false);
   }, [apiUrl]);
   //----------------------------------------------
   useEffect(() => {
