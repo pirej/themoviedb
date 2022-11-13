@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import Rating from './Rating';
-import dots from '../images/three-dots.svg';
 
 const Card = styled.div`
   width: 11.53rem;
@@ -21,18 +20,6 @@ const Card = styled.div`
       a > img {
         width: 100%;
         border-radius: 10px 10px 0 0;
-      }
-      .dots {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 1.6rem;
-        height: 1.6rem;
-        opacity: 0.5;
-        cursor: pointer;
-        :hover {
-          opacity: 0.8;
-        }
       }
       .ratingSection {
         position: absolute;
@@ -79,9 +66,6 @@ const MovieCard = ({ item }) => {
             <Link to="#">
               <img src={backdropUrl} alt="movie backdrop" />
             </Link>
-            <div className="dots">
-              <img src={dots} alt="three dots menu" />
-            </div>
             <div className="ratingSection">
               <Rating votes={vote_average} />
             </div>
