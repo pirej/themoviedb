@@ -178,6 +178,7 @@ const Home = () => {
                 </div>
                 <div className="btn">
                   <button
+                    className={`${genres.length === 0 ? 'disabled' : null} `}
                     onClick={() => {
                       resetPage();
                       getMoviesByGenre();

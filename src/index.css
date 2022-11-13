@@ -30,9 +30,11 @@ code {
 button.disabled {
   background-color: #ececec;
   color: #767676;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
 }
 
 button.disabled:hover {
   color: #767676;
+  background-color: #ececec;
+  cursor: default;
 }
