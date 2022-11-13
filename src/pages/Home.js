@@ -84,6 +84,7 @@ const Home = () => {
   const [filterClicked, setFilterClicked] = useState(false);
 
   const currentPage = useMovieData(state => state.page);
+  const resetPage = useMovieData(state => state.resetPage);
   const loadMoreMovies = useMovieData(state => state.nextPage);
   const discover = useMovieData(state => state.discover);
   const popular = useMovieData(state => state.popular);
@@ -119,7 +120,15 @@ const Home = () => {
   }, [currentPage]);
 
   //----------------------------------------------
-  // console.log('genres e--> ', genres);
+  const getMoviesByGenre = () => {
+    const getData = async () => {
+      const res = await fetch(apiUrlNext);
+      const movies = await res.json();
+      setData(movies.results);
+    };
+    getData();
+  };
+
   //----------------------------------------------
   const { observe, unobserve } = useInView({
     rootMargin: '50px 0px',
@@ -168,7 +177,14 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="btn">
-                  <button>Search</button>
+                  <button
+                    onClick={() => {
+                      resetPage();
+                      getMoviesByGenre();
+                    }}
+                  >
+                    Search
+                  </button>
                 </div>
               </div>
             </div>

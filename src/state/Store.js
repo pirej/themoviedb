@@ -5,6 +5,7 @@ const useMovieData = create(set => ({
   discover: '',
   popular: '/popular',
   genres: '',
+  resetPage: () => set(state => ({ page: (state.page = 1) })),
   nextPage: () => set(state => ({ page: state.page + 1 })),
   newDiscover: () =>
     set(state => ({ discover: (state.discover = '/discover') })),
