@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useInView } from 'react-cool-inview';
 import styled from 'styled-components';
 import MovieCard from '../components/MovieCard';
 import chevronright from '../images/chevron-right.svg';
@@ -95,7 +96,15 @@ const Home = () => {
   }, [currentPage]);
 
   //----------------------------------------------
-
+  const { observe, unobserve } = useInView({
+    rootMargin: '50px 0px',
+    onEnter: ({ unobserve }) => {
+      unobserve();
+      // Load more movies only if you used the load more button first
+      clickedToLoad && loadMoreMovies();
+      observe();
+    },
+  });
   //----------------------------------------------
 
   return (
@@ -130,7 +139,7 @@ const Home = () => {
                   })}
                 </div>
               </div>
-              <div className="btnLoad btn">
+              <div ref={observe} className="btnLoad btn">
                 <button
                   className={`${clickedToLoad ? 'disabled' : null} `}
                   disabled={clickedToLoad}
