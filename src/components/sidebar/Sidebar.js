@@ -22,6 +22,11 @@ const TheSidebar = styled.div`
       border: solid 1px #01b4e4;
     }
   }
+  .wasClicked {
+    background-color: #01b4e4;
+    color: white;
+    border: solid 1px #01b4e4;
+  }
 `;
 
 const Sidebar = () => {
@@ -53,172 +58,191 @@ const Sidebar = () => {
       <p>Genres</p>
       <div className="genresWrapper">
         <button
-          onClick={() => {
+          onClick={e => {
             genAction();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Action
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genAdventure();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Adventure
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genAnimation();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Animation
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genComedy();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Comedy
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genCrime();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Crime
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genDocumentary();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Documentary
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genDrama();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Drama
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genFamily();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Family
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genFantasy();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Fantasy
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genHistory();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           History
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genHorror();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Horror
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genMusic();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Music
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genMistery();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Mistery
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genRomance();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Romance
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genSciFi();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Science Fiction
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genTvMovie();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           TV Movie
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genThriller();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Thriller
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genWar();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           War
         </button>
         <button
-          onClick={() => {
+          onClick={e => {
             genWestern();
             newDiscover();
             newPopular();
+            e.currentTarget.classList.toggle('wasClicked');
           }}
         >
           Western
