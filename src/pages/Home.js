@@ -119,7 +119,7 @@ const Home = () => {
   }, [currentPage]);
 
   //----------------------------------------------
-  console.log('genres e--> ', genres);
+  // console.log('genres e--> ', genres);
   //----------------------------------------------
   const { observe, unobserve } = useInView({
     rootMargin: '50px 0px',

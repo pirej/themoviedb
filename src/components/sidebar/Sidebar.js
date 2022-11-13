@@ -25,6 +25,9 @@ const TheSidebar = styled.div`
 `;
 
 const Sidebar = () => {
+  const newDiscover = useMovieData(state => state.newDiscover);
+  const newPopular = useMovieData(state => state.newPopular);
+  //-----------------
   const genAction = useMovieData(state => state.genAction);
   const genAdventure = useMovieData(state => state.genAdventure);
   const genAnimation = useMovieData(state => state.genAnimation);
@@ -49,25 +52,177 @@ const Sidebar = () => {
     <TheSidebar>
       <p>Genres</p>
       <div className="genresWrapper">
-        <button onClick={() => genAction()}>Action</button>
-        <button onClick={() => genAdventure()}>Adventure</button>
-        <button onClick={() => genAnimation()}>Animation</button>
-        <button onClick={() => genComedy()}>Comedy</button>
-        <button onClick={() => genCrime()}>Crime</button>
-        <button onClick={() => genDocumentary()}>Documentary</button>
-        <button onClick={() => genDrama()}>Drama</button>
-        <button onClick={() => genFamily()}>Family</button>
-        <button onClick={() => genFantasy()}>Fantasy</button>
-        <button onClick={() => genHistory()}>History</button>
-        <button onClick={() => genHorror()}>Horror</button>
-        <button onClick={() => genMusic()}>Music</button>
-        <button onClick={() => genMistery()}>Mistery</button>
-        <button onClick={() => genRomance()}>Romance</button>
-        <button onClick={() => genSciFi()}>Science Fiction</button>
-        <button onClick={() => genTvMovie()}>TV Movie</button>
-        <button onClick={() => genThriller()}>Thriller</button>
-        <button onClick={() => genWar()}>War</button>
-        <button onClick={() => genWestern()}>Western</button>
+        <button
+          onClick={() => {
+            genAction();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Action
+        </button>
+        <button
+          onClick={() => {
+            genAdventure();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Adventure
+        </button>
+        <button
+          onClick={() => {
+            genAnimation();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Animation
+        </button>
+        <button
+          onClick={() => {
+            genComedy();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Comedy
+        </button>
+        <button
+          onClick={() => {
+            genCrime();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Crime
+        </button>
+        <button
+          onClick={() => {
+            genDocumentary();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Documentary
+        </button>
+        <button
+          onClick={() => {
+            genDrama();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Drama
+        </button>
+        <button
+          onClick={() => {
+            genFamily();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Family
+        </button>
+        <button
+          onClick={() => {
+            genFantasy();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Fantasy
+        </button>
+        <button
+          onClick={() => {
+            genHistory();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          History
+        </button>
+        <button
+          onClick={() => {
+            genHorror();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Horror
+        </button>
+        <button
+          onClick={() => {
+            genMusic();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Music
+        </button>
+        <button
+          onClick={() => {
+            genMistery();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Mistery
+        </button>
+        <button
+          onClick={() => {
+            genRomance();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Romance
+        </button>
+        <button
+          onClick={() => {
+            genSciFi();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Science Fiction
+        </button>
+        <button
+          onClick={() => {
+            genTvMovie();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          TV Movie
+        </button>
+        <button
+          onClick={() => {
+            genThriller();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Thriller
+        </button>
+        <button
+          onClick={() => {
+            genWar();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          War
+        </button>
+        <button
+          onClick={() => {
+            genWestern();
+            newDiscover();
+            newPopular();
+          }}
+        >
+          Western
+        </button>
       </div>
     </TheSidebar>
   );

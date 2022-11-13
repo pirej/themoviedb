@@ -6,6 +6,9 @@ const useMovieData = create(set => ({
   popular: '/popular',
   genres: '',
   nextPage: () => set(state => ({ page: state.page + 1 })),
+  newDiscover: () =>
+    set(state => ({ discover: (state.discover = '/discover') })),
+  newPopular: () => set(state => ({ popular: (state.popular = '') })),
   genAction: () =>
     set(state => ({ genres: (state.genres = '&with_genres=28') })),
   genAdventure: () =>
