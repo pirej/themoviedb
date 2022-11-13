@@ -85,22 +85,16 @@ const Home = () => {
 
   const currentPage = useMovieData(state => state.page);
   const loadMoreMovies = useMovieData(state => state.nextPage);
+  const discover = useMovieData(state => state.discover);
+  const popular = useMovieData(state => state.popular);
+  const genres = useMovieData(state => state.genres);
 
   const firstPage = 1;
   const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=${firstPage}`;
-  // const apiUrlNext = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}&language=en-US&page=${currentPage}`;
 
-  // --------------
-  const discover = '';
-  const popular = '/popular';
-  const genres = '';
-  // let discover = '/discover';
-  // let popular = '/popular';
-  // let genres = '&with_genres=28';
   const apiUrlNext = `https://api.themoviedb.org/3${discover}/movie${popular}?api_key=${process.env.REACT_APP_THEMOVIEDB_KEY}${genres}&language=en-US&page=${currentPage}`;
 
-  // --------------
-  // --------------
+  //----------------------------------------------
 
   useEffect(() => {
     const getData = async () => {
@@ -112,7 +106,6 @@ const Home = () => {
   }, [apiUrl]);
   //----------------------------------------------
   useEffect(() => {
-    // console.log('currentPage se smenilo ', currentPage);
     if (currentPage > firstPage) {
       const getData = async () => {
         const res = await fetch(apiUrlNext);
