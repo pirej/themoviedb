@@ -25,7 +25,7 @@ code {
   border-radius: 20px;
 }
 .btn button:hover {
-  color: #032541;
+  background-color: #032541;
 }
 button.disabled {
   background-color: #ececec;

@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import MovieCard from '../components/MovieCard';
 import chevronright from '../images/chevron-right.svg';
 import useMovieData from '../state/Store';
-// import chevrondown from '../images/chevron-down.svg';
+import chevrondown from '../images/chevron-down.svg';
+import Sidebar from '../components/sidebar/Sidebar';
 
 const MyHome = styled.div`
   display: flex;
@@ -29,17 +30,34 @@ const MyHome = styled.div`
           .allSidebarItems {
             max-width: 16.125rem;
             width: 16.125rem;
-            .sideMainItem {
-              width: 14.125rem;
+            .filterWrapper {
               box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
               border-radius: 10px;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 0.875rem 1rem;
-              margin-top: 0.75rem;
-              p {
-                margin: 0;
+              .sideMainItem {
+                /* background-color: lightCoral; */
+                width: 14.125rem;
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.875rem 1rem;
+                margin-top: 0.75rem;
+                cursor: pointer;
+                p {
+                  margin: 0;
+                }
+              }
+              .sideMenuClicked {
+                border-bottom: solid 1px #e0e0e0;
+              }
+
+              .hiddenGenres {
+                visibility: hidden;
+                display: none;
+              }
+              .showGenres {
+                visibility: visible;
+                display: block;
               }
             }
           }
@@ -64,6 +82,7 @@ const Home = () => {
   const [Loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [clickedToLoad, setClickedToLoad] = useState(false);
+  const [filterClicked, setFilterClicked] = useState(false);
 
   const currentPage = useMovieData(state => state.page);
   const loadMoreMovies = useMovieData(state => state.nextPage);
@@ -117,14 +136,30 @@ const Home = () => {
           <div className="mainsection">
             <div className="sidebarWrapper">
               <div className="allSidebarItems">
-                <div className="sideMainItem">
-                  <p>Filters</p>
-                  <img
-                    src={chevronright}
-                    width={16}
-                    height={16}
-                    alt="arrow icon"
-                  />
+                <div className="filterWrapper">
+                  <div
+                    onClick={() => setFilterClicked(!filterClicked)}
+                    className={`${
+                      filterClicked
+                        ? 'sideMainItem sideMenuClicked'
+                        : 'sideMainItem'
+                    }`}
+                  >
+                    <p>Filters</p>
+                    <img
+                      src={filterClicked ? chevrondown : chevronright}
+                      width={16}
+                      height={16}
+                      alt="arrow icon"
+                    />
+                  </div>
+                  <div
+                    className={`${
+                      filterClicked ? 'showGenres' : 'hiddenGenres'
+                    } `}
+                  >
+                    <Sidebar />
+                  </div>
                 </div>
                 <div className="btn">
                   <button>Search</button>
