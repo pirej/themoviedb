@@ -46,11 +46,11 @@ const MyHome = styled.div`
         }
 
         .cardssection {
-          /* background-color: teal; */
           display: flex;
           .theCards {
             display: flex;
             flex-wrap: wrap;
+            /* justify-content: space-around; */
             justify-content: space-between;
             /* gap: 1rem; */
           }

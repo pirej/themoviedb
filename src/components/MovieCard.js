@@ -6,7 +6,7 @@ import dots from '../images/three-dots.svg';
 
 const Card = styled.div`
   width: 11.53rem;
-  height: 22.8rem;
+  /* height: 22.8rem; */
   /* margin-top: 1.875rem; */
   margin-top: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
@@ -14,7 +14,7 @@ const Card = styled.div`
   .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     height: 100%;
     .imgSection {
       position: relative;
@@ -42,6 +42,7 @@ const Card = styled.div`
     }
 
     .titleSection {
+      margin-top: 1rem;
       padding-left: 1rem;
       a {
         text-decoration: none;

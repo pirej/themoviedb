@@ -84,11 +84,11 @@ const Rating = ({ votes }) => {
               <circle
                 stroke={
                   votes >= 7
-                    ? '#00C392'
+                    ? '#00C365'
                     : votes >= 6
-                    ? '#ACAF1A'
+                    ? '#80A300'
                     : votes >= 5
-                    ? '#CA741E'
+                    ? '#D96C00'
                     : '#CE3939'
                 }
                 strokeDashoffset={105 - rating}
