@@ -130,6 +130,12 @@ const Home = () => {
   };
 
   //----------------------------------------------
+  // enable the load more button when changing genre
+  useEffect(() => {
+    setClickedToLoad(false);
+  }, [genres]);
+
+  //----------------------------------------------
   const { observe, unobserve } = useInView({
     rootMargin: '50px 0px',
     onEnter: ({ unobserve }) => {
