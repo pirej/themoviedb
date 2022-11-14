@@ -8,6 +8,7 @@ const Card = styled.div`
   /* height: 22.8rem; */
   /* margin-top: 1.875rem; */
   margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 5px;
   border-radius: 10px;
   .wrapper {

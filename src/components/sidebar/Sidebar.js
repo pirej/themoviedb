@@ -53,6 +53,16 @@ const Sidebar = () => {
   const genWar = useMovieData(state => state.genWar);
   const genWestern = useMovieData(state => state.genWestern);
 
+  const clearClass = e => {
+    let testing = document.querySelectorAll('.wasClicked');
+    if (testing.length > 0) {
+      testing[0].classList.remove('wasClicked');
+    }
+    setTimeout(() => {
+      e.target.classList.toggle('wasClicked');
+    }, 1);
+  };
+
   return (
     <TheSidebar>
       <p>Genres</p>
@@ -62,7 +72,7 @@ const Sidebar = () => {
             genAction();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Action
@@ -72,7 +82,7 @@ const Sidebar = () => {
             genAdventure();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Adventure
@@ -82,7 +92,7 @@ const Sidebar = () => {
             genAnimation();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Animation
@@ -92,7 +102,7 @@ const Sidebar = () => {
             genComedy();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Comedy
@@ -102,7 +112,7 @@ const Sidebar = () => {
             genCrime();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Crime
@@ -112,7 +122,7 @@ const Sidebar = () => {
             genDocumentary();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Documentary
@@ -122,7 +132,7 @@ const Sidebar = () => {
             genDrama();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Drama
@@ -132,7 +142,7 @@ const Sidebar = () => {
             genFamily();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Family
@@ -142,7 +152,7 @@ const Sidebar = () => {
             genFantasy();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Fantasy
@@ -152,7 +162,7 @@ const Sidebar = () => {
             genHistory();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           History
@@ -162,7 +172,7 @@ const Sidebar = () => {
             genHorror();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Horror
@@ -172,7 +182,7 @@ const Sidebar = () => {
             genMusic();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Music
@@ -182,7 +192,7 @@ const Sidebar = () => {
             genMistery();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Mistery
@@ -192,7 +202,7 @@ const Sidebar = () => {
             genRomance();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Romance
@@ -202,7 +212,7 @@ const Sidebar = () => {
             genSciFi();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Science Fiction
@@ -212,7 +222,7 @@ const Sidebar = () => {
             genTvMovie();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           TV Movie
@@ -222,7 +232,7 @@ const Sidebar = () => {
             genThriller();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Thriller
@@ -232,7 +242,7 @@ const Sidebar = () => {
             genWar();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           War
@@ -242,7 +252,7 @@ const Sidebar = () => {
             genWestern();
             newDiscover();
             newPopular();
-            e.currentTarget.classList.toggle('wasClicked');
+            clearClass(e);
           }}
         >
           Western
